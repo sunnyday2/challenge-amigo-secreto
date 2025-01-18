@@ -1,5 +1,27 @@
- incluye información sobre la instalación, dependencias, cómo ejecutar el proyecto, y posibles problemas o soluciones.
+Es una aplicación que permita a los usuarios ingresar nombres de amigos en una lista para luego realizar un sorteo aleatorio y determinar quién es el **"amigo secreto"**.
 
-Como reto adicional, crea un README para tu proyecto de "Amigo Secreto" detallando sus funcionalidades, 
-incluyendo capturas de pantalla o videos que muestren cómo agregar nombres y realizar el sorteo. 
-Esta práctica mejorará la documentación, y hará que tu proyecto sea más accesible y profesional para la comunidad.
+El usuario deberá agregar nombres mediante un campo de texto y un botón **"Adicionar"**. Los nombres ingresados se mostrarán en una lista visible en la página, y al finalizar, un botón **"Sortear Amigo"** seleccionará uno de los nombres de forma aleatoria, mostrando el resultado en pantalla.
+
+**Fucionalidades**:
+- **Agregar nombres**: Los usuarios escribirán el nombre de un amigo en un campo de texto y lo agregarán a una lista visible al hacer clic en **"Adicionar"**.
+- **Validar entrada**: Si el campo de texto está vacío, el programa mostrará una alerta pidiendo un nombre válido.
+- **Visualizar la lista**: Los nombres ingresados aparecerán en una lista debajo del campo de entrada.
+- **Sorteo aleatorio**: Al hacer clic en el botón "Sortear Amigo", se seleccionará aleatoriamente un nombre de la lista y se mostrará en la página.
+
+
+## Capturas de Pantalla
+
+A continuación, se presentan capturas de pantalla que ilustran el funcionamiento de la aplicación:
+
+### Validacion
+![Validacion](img_readme/alert_validacion.png)
+*Captura de la pantalla inicial donde se valida que al agregar nombre este no sea vacio.*
+
+### Lista de Amigos Agregados
+![Lista de Amigos](img_readme/lista_amigos.png)
+*Captura de la pantalla mostrando la lista de amigos agregados.*
+
+### Resultado del Sorteo
+![Resultado Sorteo](img_readme/resultado_sorteo.png)
+*Captura de la pantalla mostrando el resultado del sorteo del amigo secreto.*
+
