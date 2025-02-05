@@ -1,4 +1,8 @@
 let amigos = [];
+const botonSortear = document.querySelector("#sortear");
+const botonResetear = document.querySelector("#resetear");
+const botonAgregar = document.querySelector("#agregar");
+
 
 /**
  * Una función que recorra el array amigos y agregue cada nombre como un elemento <li> dentro de una lista HTML.
@@ -11,14 +15,32 @@ let amigos = [];
  * @returns 
  */
 function agregarAmigo(){
+    if(botonSortear.disabled){  
+        alert("El sorteo ya ha sido realizado, por favor resetea el juego");
+        return;
+    }
+
     let nombreIngresado = document.querySelector("#amigo").value;
 
     if(nombreIngresado === ""){
         alert("Por favor, ingresa un nombre valido");
         return;
     }
+    
+    // validar si  el nombre ingresado ya existe en la lista de amigos
+    if(amigos.includes(nombreIngresado)){
+        alert("El amigo ya ha sido ingresado");
+        return;
+    }
 
     amigos.push(nombreIngresado);
+    actualizarListaAmigos();
+    document.querySelector("#amigo").value = "";
+
+    return;
+}
+
+function actualizarListaAmigos(){
     let lista = document.querySelector("#listaAmigos");
     lista.innerHTML = "";
     for(let i = 0; i < amigos.length; i++){
@@ -26,8 +48,6 @@ function agregarAmigo(){
         nuevoAmigo.textContent = amigos[i];
         lista.appendChild(nuevoAmigo);
     }
-
-    document.querySelector("#amigo").value = "";
     return;
 }
 
@@ -58,6 +78,24 @@ function sortearAmigo() {
     let nombreAmigoSorteado = document.createElement("li");
     nombreAmigoSorteado.textContent = `El amigo secreto sorteado es: ${amigoSorteado}`;
     resultado.appendChild(nombreAmigoSorteado);
+    if (botonSortear) {
+        botonSortear.disabled = true;
+        botonSortear.style.backgroundColor = 'var(--color-tertiary)';
+        botonSortear.style.color = 'var(--color-text)';
+    }
 
+    return;
+}
+
+function resetearJuego(){
+    amigos = [];
+    document.querySelector("#listaAmigos").innerHTML = "";
+    document.querySelector("#resultado").innerHTML = "";
+    if (botonSortear) {
+        botonSortear.style.backgroundColor = 'var(--color-button)';
+        botonSortear.style.color = 'var(--color-white)';
+    }
+    sortear.disabled = false;
+    sortear.
     return;
 }
